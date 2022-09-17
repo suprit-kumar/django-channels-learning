@@ -20,7 +20,7 @@ class TestConsumer(WebsocketConsumer):
     def receive(self, text_data=None, bytes_data=None):
         print(text_data)
         try:
-            for i in range(1000):
+            for _ in range(1000):
                 self.send(json.dumps({'message': randint(1, 100)}))
                 sleep(1)
         except:
